@@ -13,11 +13,14 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger GitLab Pipeline
+      - name: Trigger GitLab Pipeline and Show Response
         run: |
-          curl -X POST \
-          -F token=${{ secrets.GITLAB_PIPELINE_TRIGGER_TOKEN }} \
-          -F ref=main \
-          https://gitlab.com/amfoss/amfoss/website-v2/trigger/pipeline
-        env:
-          GITLAB_PIPELINE_TRIGGER_TOKEN: ${{ secrets.GITLAB_PIPELINE_TRIGGER_TOKEN }}
+          echo "Triggering GitLab pipeline..."
+          RESPONSE=$(curl -s -w "\nHTTP_STATUS:%{http_code}\n" -X POST \
+            -F token=${{ secrets.GITLAB_PIPELINE_TRIGGER_TOKEN }} \
+            -F ref=main \
+            -F "variables[TRIGGERED_BY]=github" \
+            https://gitlab.com/amfoss/amfoss/website-v2/trigger/pipeline)
+
+          echo "GitLab Response:"
+          echo "$RESPONSE"
