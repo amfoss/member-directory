@@ -1,0 +1,106 @@
+# .github/workflows/invite-new-members.yml
+
+name: Automatic Organization Invitation
+
+on:
+  push:
+    branches:
+      - production-data
+    paths:
+      - 'members.json'
+
+jobs:
+  invite_members:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 
+
+      - name: Set up Python for JSON parsing
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          
+      - name: Install GitHub CLI
+        uses: cli/cli-action@v3
+        with:
+          version: latest
+          
+      - name: Find and Invite New Members to amFOSS
+        env:
+          ORG_NAME: amfoss
+          GITHUB_TOKEN: ${{ secrets.ORG_INVITER_TOKEN }} 
+        run: |
+          echo "--- Starting Member Invitation Process ---"
+
+          CURRENT_JSON=$(cat members.json)
+          PREVIOUS_JSON=$(git show HEAD~1:members.json || echo '[]')
+
+          NEW_USERNAMES=$(python - <<EOF
+          import json
+          import sys
+          import re
+
+          try:
+              current_members = json.loads('$CURRENT_JSON')
+          except json.JSONDecodeError:
+              sys.exit(1)
+
+          try:
+              previous_members = json.loads('$PREVIOUS_JSON')
+          except json.JSONDecodeError:
+              previous_members = []
+              
+          current_links = {m.get('githubLink') for m in current_members if m.get('githubLink')}
+          previous_links = {m.get('githubLink') for m in previous_members if m.get('githubLink')}
+
+          new_links = current_links - previous_links
+
+          new_usernames = []
+          for link in new_links:
+              match = re.search(r'github\.com/([^/]+)', link)
+              if match:
+                  new_usernames.append(match.group(1))
+
+          print(" ".join(new_usernames))
+          EOF
+          )
+
+          if [ -z "$NEW_USERNAMES" ]; then
+            echo "No new members found. Invitation skipped."
+            exit 0
+          fi
+
+          echo "Found new members to invite: $NEW_USERNAMES"
+
+          echo "$NEW_USERNAMES" | tr ' ' '\n' | while read username; do
+            if [ -n "$username" ]; then
+              echo "Processing user $username..."
+              
+              USER_ID=$(gh api \
+                -H "Accept: application/vnd.github.v3+json" \
+                /users/"$username" | jq -r '.id')
+
+              if [ -z "$USER_ID" ] || [ "$USER_ID" = "null" ]; then
+                echo "ERROR: Failed to retrieve GitHub User ID for username: $username. Skipping."
+                continue
+              fi
+
+              gh api \
+                --method POST \
+                -H "Accept: application/vnd.github.v3+json" \
+                /orgs/${{ env.ORG_NAME }}/invitations \
+                -f invitee_id="$USER_ID" \
+                -f role='member' 
+                
+              echo "Invitation sent successfully to $username (ID: $USER_ID)."
+            fi
+          done
+
+          echo "--- Invitation Sent To All New Members ---"
