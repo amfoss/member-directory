@@ -1,0 +1,50 @@
+# .github/workflows/validate-PR.yml
+
+name: Validate PR
+on:
+    pull_request:
+
+jobs: 
+    validate-PR:
+        runs-on: ubuntu-latest
+        env:
+          AUTO_MERGE: 1
+        steps:
+          - name: Check if active
+            if: env.AUTO_MERGE != '1'
+            run: exit 1 
+          - name: Get code
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: 0
+          - name: Check changes
+            run: |
+                git remote get-url upstream || git remote add upstream https://github.com/amfoss/member-directory
+                git fetch upstream
+                count_assets=$(git diff upstream/main HEAD --numstat | awk '/assets\// {n++} END {print n+0}')
+                changes_members=$(git diff upstream/main HEAD --numstat | awk '/members\.json/ {print $1}')
+                deleted_members=$(git diff upstream/main --numstat | awk '/members\.json/ {print $2}')
+                count_assets=${count_assets}
+                changes_members=${changes_members}
+                deleted_members=${deleted_members}
+                echo "changes in assets $count_assets"
+                echo "changes in members $changes_members"
+                echo "deletions in members $deleted_members"
+                if (( count_assets > 1 )); then 
+                  echo "Too many pics added"
+                  exit 1
+                elif (( count_assets == 0 )); then
+                  echo "No pic added"
+                  exit 1 
+                fi
+                if (( changes_members > 10 )); then
+                  echo "Too many changes to members"
+                  exit 1
+                elif (( changes_members < 5 )); then
+                  echo "Not enough details provided"
+                  exit 1
+                fi
+                if (( deleted_members > 0 )); then
+                  echo "Member detail has been deleted"
+                  exit 1
+                fi
