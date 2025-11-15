@@ -8,7 +8,7 @@ jobs:
     validate-PR:
         runs-on: ubuntu-latest
         env:
-          AUTO_MERGE: 1
+          AUTO_MERGE: ${{ secrets.AUTO_MERGE }}
         steps:
           - name: Check if active
             if: env.AUTO_MERGE != '1'
@@ -23,28 +23,25 @@ jobs:
                 git fetch upstream
                 count_assets=$(git diff upstream/main HEAD --numstat | awk '/assets\// {n++} END {print n+0}')
                 changes_members=$(git diff upstream/main HEAD --numstat | awk '/members\.json/ {print $1}')
-                deleted_members=$(git diff upstream/main --numstat | awk '/members\.json/ {print $2}')
-                count_assets=${count_assets}
-                changes_members=${changes_members}
-                deleted_members=${deleted_members}
+                deleted_members=$(git diff upstream/main HEAD --numstat | awk '/members\.json/ {print $2}')
                 echo "changes in assets $count_assets"
                 echo "changes in members $changes_members"
                 echo "deletions in members $deleted_members"
                 if (( count_assets > 1 )); then 
-                  echo "Too many pics added"
+                  echo "Error: Only one image should be added in assets/ directory"
                   exit 1
                 elif (( count_assets == 0 )); then
-                  echo "No pic added"
+                echo "Error: Atleast one image must be added"
                   exit 1 
                 fi
                 if (( changes_members > 10 )); then
-                  echo "Too many changes to members"
+                echo "Error: Only one member must be added"
                   exit 1
-                elif (( changes_members < 5 )); then
-                  echo "Not enough details provided"
+                elif (( changes_members < 6 )); then
+                echo "Error: Not all fields have been filled in members.json"
                   exit 1
                 fi
                 if (( deleted_members > 0 )); then
-                  echo "Member detail has been deleted"
+                echo "Error: Member detail has been deleted"
                   exit 1
                 fi
