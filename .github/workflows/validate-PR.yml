@@ -1,0 +1,47 @@
+# .github/workflows/validate-PR.yml
+
+name: Validate PR
+on:
+    pull_request:
+
+jobs: 
+    validate-PR:
+        runs-on: ubuntu-latest
+        env:
+          AUTO_MERGE: ${{ secrets.AUTO_MERGE }}
+        steps:
+          - name: Check if active
+            if: env.AUTO_MERGE != '1'
+            run: exit 1 
+          - name: Get code
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: 0
+          - name: Check changes
+            run: |
+                git remote get-url upstream || git remote add upstream https://github.com/amfoss/member-directory
+                git fetch upstream
+                count_assets=$(git diff upstream/main HEAD --numstat | awk '/assets\// {n++} END {print n+0}')
+                changes_members=$(git diff upstream/main HEAD --numstat | awk '/members\.json/ {print $1}')
+                deleted_members=$(git diff upstream/main HEAD --numstat | awk '/members\.json/ {print $2}')
+                echo "changes in assets $count_assets"
+                echo "changes in members $changes_members"
+                echo "deletions in members $deleted_members"
+                if (( count_assets > 1 )); then 
+                  echo "Error: Only one image should be added in assets/ directory"
+                  exit 1
+                elif (( count_assets == 0 )); then
+                echo "Error: Atleast one image must be added"
+                  exit 1 
+                fi
+                if (( changes_members > 10 )); then
+                echo "Error: Only one member must be added"
+                  exit 1
+                elif (( changes_members < 6 )); then
+                echo "Error: Not all fields have been filled in members.json"
+                  exit 1
+                fi
+                if (( deleted_members > 0 )); then
+                echo "Error: Member detail has been deleted"
+                  exit 1
+                fi
