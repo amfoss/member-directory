@@ -270,5 +270,13 @@
     "twitterLink": "",
     "linkedinLink": "https://www.linkedin.com/in/john-yohan-90a92a28b/",
     "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/third-years/John_Yohan.jpeg"
+  },
+  {
+    "name": "Naveen",
+    "title": "Second Year",
+    "githubLink": "https://github.com/naveen28204280",
+    "twitterLink": "https://x.com/naveen_282",
+    "linkedinLink": "https://www.linkedin.com/in/naveen-srinivas-623667320",
+    "imgPath":  "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/second-year/Naveen.jpeg" 
   }
 ]
