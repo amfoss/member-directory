@@ -39,7 +39,7 @@ jobs:
           echo "EOF" >> $GITHUB_ENV
 
           echo "PREVIOUS_JSON_CONTENT<<EOF" >> $GITHUB_ENV
-          git show HEAD~1:members.json || echo '[]' >> $GITHUB_ENV
+          git show HEAD~1:members.json  >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
       - name: Process Invites
@@ -114,8 +114,8 @@ jobs:
                 --method POST \
                 -H "Accept: application/vnd.github.v3+json" \
                 /orgs/$ORG_NAME/invitations \
-                -f invitee_id="$USER_ID" \
-                -f role='member' 
+                -F invitee_id="$USER_ID" \
+                -f role='direct_member'
                 
               echo "Invitation sent successfully to $username (ID: $USER_ID)."
             fi
