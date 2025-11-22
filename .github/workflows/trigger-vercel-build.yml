@@ -3,11 +3,11 @@
 name: Trigger Vercel Build
 
 on:
-  push:
-    branches:
-      - "main"
-    paths:
-      - 'members.json'
+  # push:
+  #   branches:
+  #     - "main"
+  #   paths:
+  #     - 'members.json'
 
 jobs:
   build:
