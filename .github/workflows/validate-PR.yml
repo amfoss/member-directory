@@ -2,10 +2,8 @@
 
 name: Validate PR
 on:
-  push:
-    branches-ignore:
-      - main
   pull_request:
+  merge_group:
 
 jobs: 
     validate-PR:
