@@ -2,6 +2,7 @@
 
 name: Validate PR
 on:
+    push:
     pull_request:
 
 jobs: 
