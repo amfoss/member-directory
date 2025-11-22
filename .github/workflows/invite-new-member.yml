@@ -1,62 +1,76 @@
-# .github/workflows/invite-new-members.yml
-
 name: Automatic Organization Invitation
 
 on:
   push:
     branches:
-     - 'main'
+      - 'main'
     paths:
       - 'members.json'
 
 jobs:
   invite_members:
     runs-on: ubuntu-latest
-    
     permissions:
       contents: read
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 2 
 
-      - name: Set up Python for JSON parsing
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
           
-      - name: Install GitHub CLI
-        uses: cli/cli-action@v3
-        with:
-          version: latest
-          
       - name: Find and Invite New Members to amFOSS
         env:
           ORG_NAME: amfoss
-          GITHUB_TOKEN: ${{ secrets.ORG_INVITER_TOKEN }} 
+          # This must be a PAT with 'admin:org' scope
+          GH_TOKEN: ${{ secrets.ORG_INVITER_TOKEN }} 
         run: |
           echo "--- Starting Member Invitation Process ---"
 
-          CURRENT_JSON=$(cat members.json)
-          PREVIOUS_JSON=$(git show HEAD~1:members.json || echo '[]')
+          # 1. Capture JSON content safely into Env Vars
+          # We use EOF delimiters to handle multi-line JSON safely
+          echo "CURRENT_JSON_CONTENT<<EOF" >> $GITHUB_ENV
+          cat members.json >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
-          NEW_USERNAMES=$(python - <<EOF
+          echo "PREVIOUS_JSON_CONTENT<<EOF" >> $GITHUB_ENV
+          git show HEAD~1:members.json || echo '[]' >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Process Invites
+        env:
+          ORG_NAME: amfoss
+          GH_TOKEN: ${{ secrets.ORG_INVITER_TOKEN }}
+        run: |
+          # 2. Run Python using os.environ (Prevents syntax crashing)
+          NEW_USERNAMES=$(python3 - <<'EOF'
+          import os
           import json
           import sys
           import re
 
+          # Read from Environment Variables instead of direct injection
+          current_raw = os.environ.get('CURRENT_JSON_CONTENT', '[]')
+          previous_raw = os.environ.get('PREVIOUS_JSON_CONTENT', '[]')
+
           try:
-              current_members = json.loads('$CURRENT_JSON')
+              current_members = json.loads(current_raw)
           except json.JSONDecodeError:
+              print("Error decoding current members.json", file=sys.stderr)
               sys.exit(1)
 
           try:
-              previous_members = json.loads('$PREVIOUS_JSON')
+              previous_members = json.loads(previous_raw)
           except json.JSONDecodeError:
               previous_members = []
               
+          # Extract GitHub Links
+          # Handles cases where githubLink key might be missing
           current_links = {m.get('githubLink') for m in current_members if m.get('githubLink')}
           previous_links = {m.get('githubLink') for m in previous_members if m.get('githubLink')}
 
@@ -64,7 +78,8 @@ jobs:
 
           new_usernames = []
           for link in new_links:
-              match = re.search(r'github\.com/([^/]+)', link)
+              # Regex to find username (handles http, https, www, and trailing slashes)
+              match = re.search(r'github\.com/([^/]+)/?', link)
               if match:
                   new_usernames.append(match.group(1))
 
@@ -79,28 +94,29 @@ jobs:
 
           echo "Found new members to invite: $NEW_USERNAMES"
 
-          echo "$NEW_USERNAMES" | tr ' ' '\n' | while read username; do
+          # 3. Loop and Invite
+          for username in $NEW_USERNAMES; do
             if [ -n "$username" ]; then
               echo "Processing user $username..."
               
+              # Get User ID (More reliable than username for invites)
               USER_ID=$(gh api \
                 -H "Accept: application/vnd.github.v3+json" \
-                /users/"$username" | jq -r '.id')
+                /users/"$username" --jq '.id')
 
               if [ -z "$USER_ID" ] || [ "$USER_ID" = "null" ]; then
-                echo "ERROR: Failed to retrieve GitHub User ID for username: $username. Skipping."
+                echo "ERROR: Could not find user: $username. Skipping."
                 continue
               fi
 
+              # Send Invitation
               gh api \
                 --method POST \
                 -H "Accept: application/vnd.github.v3+json" \
-                /orgs/${{ env.ORG_NAME }}/invitations \
+                /orgs/$ORG_NAME/invitations \
                 -f invitee_id="$USER_ID" \
                 -f role='member' 
                 
               echo "Invitation sent successfully to $username (ID: $USER_ID)."
             fi
           done
-
-          echo "--- Invitation Sent To All New Members ---"
