@@ -2,7 +2,8 @@
 
 name: Validate PR
 on:
-    pull_request:
+  pull_request:
+  merge_group:
 
 jobs: 
     validate-PR:
