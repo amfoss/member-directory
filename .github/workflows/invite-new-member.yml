@@ -4,6 +4,8 @@ name: Automatic Organization Invitation
 
 on:
   push:
+    branches:
+     - 'main'
     paths:
       - 'members.json'
 
