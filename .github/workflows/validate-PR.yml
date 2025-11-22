@@ -7,12 +7,7 @@ on:
 jobs: 
     validate-PR:
         runs-on: ubuntu-latest
-        env:
-          AUTO_MERGE: ${{ secrets.AUTO_MERGE }}
         steps:
-          - name: Check if active
-            if: ${{ env.AUTO_MERGE != '1' }}
-            run: exit 1 
           - name: Get code
             uses: actions/checkout@v4
             with:

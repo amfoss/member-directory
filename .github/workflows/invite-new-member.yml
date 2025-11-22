@@ -4,8 +4,6 @@ name: Automatic Organization Invitation
 
 on:
   push:
-    branches:
-      - production-data
     paths:
       - 'members.json'
 

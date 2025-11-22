@@ -3,9 +3,7 @@
 name: Trigger Vercel Build
 
 on:
-  push:
-    branches:
-      - production-data
+  push
 
 jobs:
   build:
