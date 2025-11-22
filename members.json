@@ -285,5 +285,19 @@
     "twitterLink": "",
     "linkedinLink": "https://www.linkedin.com/in/tejacharanbellamkonda/",
     "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/second-year/tejas.jpeg"
+  {
+    "name": "Anandajith S",
+    "title": "Second Year",
+    "githubLink": "https://github.com/AnandajithS",
+    "twitterLink": "",
+    "linkedinLink": "www.linkedin.com/in/anandajith-s",
+    "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/second-years/Anandajith.jpeg"
+  },
+    "name": "Aadarsh Mahesh K",
+    "title": "Second Year",
+    "githubLink": "https://github.com/AadarshM07",
+    "twitterLink": "https://www.linkedin.com/in/aadarsh-mahesh-k-7954682aa/",
+    "linkedinLink": "https://www.linkedin.com/in/aadarsh-mahesh-k-7954682aa/",
+    "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/second-year/Aadarsh.jpeg"
   }
 ]
