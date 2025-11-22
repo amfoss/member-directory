@@ -254,7 +254,7 @@
     "twitterLink": "https://twitter.com/PBhanuPrakash99",
     "linkedinLink": "https://www.linkedin.com/in/bhanu-prakash-poluparthi/",
     "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/alumni/Bhanu_Prakash.png"
-  },  
+  },
   {
     "name": "Abhishek BVS",
     "title": "(2021)",
@@ -286,5 +286,10 @@
     "twitterLink": "",
     "linkedinLink": "https://www.linkedin.com/in/manikishang/",
     "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/alumni/Manikishan_Ghantasala.png"
+  },
+
+
+  {
+    "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
   }
 ]
