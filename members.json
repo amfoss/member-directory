@@ -310,8 +310,6 @@
     "linkedinLink": "https://www.linkedin.com/in/jagadeeshwar-reddy-kota",
     "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/second-years/Jagadeesh_kota.png"
   },
-
-
   {
     "name": "Abhishek U Pai",
     "title": "First Year",
@@ -320,5 +318,8 @@
     "LinkedInLink":"https://www.linkedin.com/in/abhishek-u-pai-2907952b6/",
     "imgPath":"https://github.com/ABHISHEKUPAI/member-directory/blob/main/assets/first-years/ABHISHEK%20U%20PAI.jpeg",   
   },
+  {
+    "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
+  }
   
 ]
