@@ -336,6 +336,14 @@
     "imgPath":"https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/adish.jpg"
   },
 
+  { "name": "Ajul T.M",
+    "title": "First Year",
+    "githubLink": "https://github.com/Rufine777",
+    "twitterLink": "https://x.com/AjulTm28",
+    "linkedinLink": "https://www.linkedin.com/in/ajultm/",
+    "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/Ajul_tm.png"
+  },
+
   {
     "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
   }
