@@ -302,6 +302,14 @@
     "linkedinLink": "https://www.linkedin.com/in/tejacharanbellamkonda/",
     "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/second-years/tejas.jpg"
   },
+  {
+    "name": "Jagadeesh Kota",
+    "title": "Second year",
+    "githubLink": "https://github.com/kota-jagadeesh",
+    "twitterLink": "https://x.com/VoidRaven18",
+    "linkedinLink": "https://www.linkedin.com/in/jagadeeshwar-reddy-kota",
+    "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/second-years/Jagadeesh_kota.png"
+  },
 
   { "name": "Abhijith R Pillai",
     "title": "First Year",
@@ -309,6 +317,15 @@
     "twitterLink": "https://x.com/abxijth/",
     "linkedinLink": "https://www.linkedin.com/in/abxijth/",
     "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/AbhijithRPillai.jpg"
+  },
+
+  {
+    "name": "Adish Koshy Kiron",
+    "title": "First Year",
+    "githubLink":"https://github.com/Nova-Stark",
+    "twitterLink":"https://x.com/AdishKiron",
+    "linkedinLink":"www.linkedin.com/in/adish-kiron-b9a1a7361",
+    "imgPath":"https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/adish.jpg"
   },
 
   {
