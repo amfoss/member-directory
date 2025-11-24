@@ -303,6 +303,13 @@
     "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/second-years/tejas.jpg"
   },
 
+  { "name": "Abhijith R Pillai",
+    "title": "First Year",
+    "githubLink": "https://github.com/abxijth",
+    "twitterLink": "https://x.com/abxijth/",
+    "linkedinLink": "https://www.linkedin.com/in/abxijth/",
+    "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/abhijithrpillai.jpg"
+  },
 
   {
     "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
