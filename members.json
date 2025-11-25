@@ -349,6 +349,14 @@
     "imgPath":"https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/TulasiLasya.jpg"
   },
 
+ { "name": "Abhijith P",
+    "title": "First Year",
+    "githubLink": "https://github.com/Abhijith-P-B",
+    "twitterLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/abhi-jith-p",
+    "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/abhijithp.jpeg"
+  },
+
   {
     "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
   }
