@@ -348,8 +348,16 @@
     "linkedinLink":"https://www.linkedin.com/in/tulasi-lasya-gorrela-ba954536a/",
     "imgPath":"https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/TulasiLasya.jpg"
   },
-
- { "name": "Abhijith P",
+  {
+    "name": "Devang Dileep",
+    "title": "First year",
+    "githubLink": "https://github.com/devangdileep",
+    "twitterLink": "https://x.com/devang_dileep",
+    "linkedinLink": "https://www.linkedin.com/in/devang-dileep",
+    "imgPath": "https://raw.githubusercontent.com/amfoss/member-directory/main/assets/first-years/devang.jpeg"
+  },
+  { 
+    "name": "Abhijith P",
     "title": "First Year",
     "githubLink": "https://github.com/Abhijith-P-B",
     "twitterLink": "",
