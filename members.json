@@ -8,13 +8,53 @@
     "imgPath": "/amfoss/member-directory/assets/fourth-years/harigovind.jpg"
   },
   {
+    "name": "Aniketh Vijesh",
+    "title": "Fourth year",
+    "githubLink": "https://github.com/TheHuntsman4",
+    "twitterLink": "https://twitter.com/achi1135__464",
+    "linkedinLink": "https://www.linkedin.com/in/aniketh-vijesh-7a9466277/",
+    "imgPath": "/amfoss/member-directory/assets/fourth-years/aniketh_vijesh.jpg"
+  },
+  {
+    "name": "Siddharth Menon",
+    "title": "Fourth year",
+    "githubLink": "https://github.com/BiscuitBobby",
+    "twitterLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/biscuitbobby",
+    "imgPath": "/amfoss/member-directory/assets/fourth-years/siddharth_menon.jpeg"
+  },
+  {
     "name": "Ivin",
     "title": "Fourth year",
     "githubLink": "https://github.com/ivinjabraham",
     "twitterLink": "",
     "linkedinLink": "https://www.linkedin.com/in/ivinjabraham/",
-    "imgPath": "/amfoss/member-directory/assets/fourth-years/ivin.jpeg"
+    "imgPath": "/amfoss/member-directory/assets/fourth-years/ivin.jpg"
+  },  
+  {
+    "name": "Farzana Shajahan",
+    "title": "Fourth year",
+    "githubLink": "https://github.com/Fuzzphorescent",
+    "twitterLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/farzana-shajahan/",
+    "imgPath": "/amfoss/member-directory/assets/fourth-years/farzana.jpeg"
   },
+  {
+    "name": "Satvik Mishra",
+    "title": "Fourth year",
+    "githubLink": "https://github.com/satvshr",
+    "twitterLink": "https://twitter.com/satvshr",
+    "linkedinLink": "https://www.linkedin.com/in/satvik-mishra-318194275/",
+    "imgPath": "/amfoss/member-directory/assets/fourth-years/satvik_mishra.jpg"
+  },
+  {
+    "name": "Hemanth KrishnaKumar",
+    "title": "Fourth year",
+    "githubLink": "https://github.com/Wreck-X",
+    "twitterLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/hemanth-krishnakumar-714546271/",
+    "imgPath": "/amfoss/member-directory/assets/fourth-years/hemanth_krishnakumar.jpg"
+  },  
   {
     "name": "Kartikey Singh",
     "title": "Fourth year",
@@ -32,52 +72,12 @@
     "imgPath": "/amfoss/member-directory/assets/fourth-years/kshitij_thareja.jpg"
   },
   {
-    "name": "Farzana Shajahan",
-    "title": "Fourth year",
-    "githubLink": "https://github.com/Fuzzphorescent",
-    "twitterLink": "",
-    "linkedinLink": "https://www.linkedin.com/in/farzana-shajahan/",
-    "imgPath": "/amfoss/member-directory/assets/fourth-years/farzana.jpeg"
-  },
-  {
     "name": "Shrisharanyan Vasu",
     "title": "Fourth year",
     "githubLink": "https://github.com/spellsharp",
     "twitterLink": "https://twitter.com/shrisharanyan",
     "linkedinLink": "https://www.linkedin.com/in/shrisharanyan",
     "imgPath": "/amfoss/member-directory/assets/fourth-years/shrisharanyan.jpg"
-  },
-  {
-    "name": "Aniketh Vijesh",
-    "title": "Fourth year",
-    "githubLink": "https://github.com/TheHuntsman4",
-    "twitterLink": "https://twitter.com/achi1135__464",
-    "linkedinLink": "https://www.linkedin.com/in/aniketh-vijesh-7a9466277/",
-    "imgPath": "/amfoss/member-directory/assets/fourth-years/aniketh_vijesh.jpeg"
-  },
-  {
-    "name": "Satvik Mishra",
-    "title": "Fourth year",
-    "githubLink": "https://github.com/satvshr",
-    "twitterLink": "https://twitter.com/satvshr",
-    "linkedinLink": "https://www.linkedin.com/in/satvik-mishra-318194275/",
-    "imgPath": "/amfoss/member-directory/assets/fourth-years/satvik_mishra.jpg"
-  },
-  {
-    "name": "Siddharth Menon",
-    "title": "Fourth year",
-    "githubLink": "https://github.com/BiscuitBobby",
-    "twitterLink": "",
-    "linkedinLink": "https://www.linkedin.com/in/biscuitbobby",
-    "imgPath": "/amfoss/member-directory/assets/fourth-years/Siddharth_Menon.jpeg"
-  },
-  {
-    "name": "Hemanth KrishnaKumar",
-    "title": "Fourth year",
-    "githubLink": "https://github.com/Wreck-X",
-    "twitterLink": "",
-    "linkedinLink": "",
-    "imgPath": "/amfoss/member-directory/assets/fourth-years/Hemanth_Krishnakumar.jpg"
   },
   {
     "name": "Hridesh Mg",
