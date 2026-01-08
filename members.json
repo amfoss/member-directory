@@ -30,7 +30,7 @@
     "twitterLink": "",
     "linkedinLink": "https://www.linkedin.com/in/ivinjabraham/",
     "imgPath": "/amfoss/member-directory/assets/fourth-years/ivin.jpg"
-  },  
+  },
   {
     "name": "Farzana Shajahan",
     "title": "Fourth year",
@@ -54,7 +54,7 @@
     "twitterLink": "",
     "linkedinLink": "https://www.linkedin.com/in/hemanth-krishnakumar-714546271/",
     "imgPath": "/amfoss/member-directory/assets/fourth-years/hemanth_krishnakumar.jpg"
-  },  
+  },
   {
     "name": "Kartikey Singh",
     "title": "Fourth year",
@@ -295,7 +295,8 @@
     "linkedinLink": "https://www.linkedin.com/in/aadarsh-mahesh-k-7954682aa/",
     "imgPath": "/amfoss/member-directory/assets/second-years/Aadarsh.png"
   },
-  { "name": "Teja Sai Charan Bellamkonda",
+  {
+    "name": "Teja Sai Charan Bellamkonda",
     "title": "Second Year",
     "githubLink": "https://github.com/tejasai2007",
     "twitterLink": "",
@@ -318,7 +319,8 @@
     "linkedinLink": "https://www.linkedin.com/in/rohith-k-pradeep/",
     "imgPath": "/amfoss/member-directory/assets/second-years/Rohith.jpeg"
   },
-    { "name": "Ashish Vardhan Karanam",
+  {
+    "name": "Ashish Vardhan Karanam",
     "title": "Second Year",
     "githubLink": "https://github.com/ashish-066",
     "twitterLink": "",
@@ -333,7 +335,7 @@
     "linkedinLink": "https://www.linkedin.com/in/khushal-chitturi-548533324/",
     "imgPath": "/amfoss/member-directory/assets/second-years/khushal.jpg"
   },
-    {
+  {
     "name": "P Harshith Rao",
     "title": "Second Year",
     "githubLink": "https://github.com/Harshith-2208",
@@ -366,7 +368,8 @@
     "linkedinLink": "https://www.linkedin.com/in/abhishek-u-pai-2907952b6/ ",
     "imgPath": "/amfoss/member-directory/assets/first-years/ABHISHEK%20U%20PAI.jpeg"
   },
-  { "name": "Abhijith R Pillai",
+  {
+    "name": "Abhijith R Pillai",
     "title": "First Year",
     "githubLink": "https://github.com/abxijth",
     "twitterLink": "https://x.com/abxijth/",
@@ -374,14 +377,7 @@
     "imgPath": "/amfoss/member-directory/assets/first-years/AbhijithRPillai.jpeg"
   },
   {
-    "name": "Adish Koshy Kiron",
-    "title": "First Year",
-    "githubLink":"https://github.com/Nova-Stark",
-    "twitterLink":"https://x.com/AdishKiron",
-    "linkedinLink":"www.linkedin.com/in/adish-kiron-b9a1a7361",
-    "imgPath":"/amfoss/member-directory/assets/first-years/adish.jpg"
-  },
-  { "name": "Ajul T.M",
+    "name": "Ajul T.M",
     "title": "First Year",
     "githubLink": "https://github.com/Rufine777",
     "twitterLink": "https://x.com/AjulTm28",
@@ -391,10 +387,10 @@
   {
     "name": "Gorrela Tulasi Lasya",
     "title": "First Year",
-    "githubLink":"https://github.com/TulasiLasya",
-    "twitterLink":"https://x.com/TulasiLasya301",
-    "linkedinLink":"https://www.linkedin.com/in/tulasi-lasya-gorrela-ba954536a/",
-    "imgPath":"/amfoss/member-directory/assets/first-years/TulasiLasya.jpg"
+    "githubLink": "https://github.com/TulasiLasya",
+    "twitterLink": "https://x.com/TulasiLasya301",
+    "linkedinLink": "https://www.linkedin.com/in/tulasi-lasya-gorrela-ba954536a/",
+    "imgPath": "/amfoss/member-directory/assets/first-years/TulasiLasya.jpg"
   },
   {
     "name": "Devang Dileep",
@@ -404,7 +400,7 @@
     "linkedinLink": "https://www.linkedin.com/in/devang-dileep",
     "imgPath": "/amfoss/member-directory/assets/first-years/devang.jpeg"
   },
-  { 
+  {
     "name": "Abhijith P",
     "title": "First Year",
     "githubLink": "https://github.com/Abhijith-P-B",
@@ -444,7 +440,7 @@
     "linkedinLink": "https://www.linkedin.com/in/ganesh-s-a14b28375/",
     "imgPath": "/amfoss/member-directory/assets/first-years/ganesh_s.jpeg"
   },
-  { 
+  {
     "name": "M A Sree Praharsha",
     "title": "First Year",
     "githubLink": "https://github.com/Praharsha2007",
@@ -452,7 +448,7 @@
     "linkedinLink": "https://www.linkedin.com/in/sree-praharsha-51049b391/",
     "imgPath": "/amfoss/member-directory/assets/first-years/Praharsha.jpeg"
   },
-    { 
+  {
     "name": "Rishik Raj P",
     "title": "First Year",
     "githubLink": "https://github.com/Rishik-0",
@@ -470,11 +466,11 @@
     "imgPath": "/amfoss/member-directory/assets/first-years/saharsh_baiju.jpeg"
   },
   {
-    "name":"Aadith Anil",
+    "name": "Aadith Anil",
     "title": "First Year",
     "githubLink": "https://github.com/rogueone-x",
     "linkendinLink": "https://www.linkedin.com/in/aadith-anil-67929a3a5/",
-    "imgPath":"/amfoss/member-directory/assets/first-years/Aadith_Anil.jpg"
+    "imgPath": "/amfoss/member-directory/assets/first-years/Aadith_Anil.jpg"
   },
 
   {
