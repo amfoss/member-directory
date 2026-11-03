@@ -328,6 +328,13 @@
     "imgPath": "/amfoss/member-directory/assets/second-years/Aadith_Anil.jpg"
   },
   {
+    "name": "Praveen Mutyala",
+    "title": "Second year",
+    "githubLink": "https://github.com/praveenmutyala2006",
+    "linkedinLink": "https://www.linkedin.com/in/praveen-mutyala-927011376/",
+    "imgPath": "/amfoss/member-directory/assets/second-years/Praveen_Mutyala.png"
+  },
+  {
     "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
   }
 ]
