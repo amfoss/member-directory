@@ -328,6 +328,13 @@
     "imgPath": "/amfoss/member-directory/assets/second-years/Aadith_Anil.jpg"
   },
   {
+    "name": "Varun Nagnath Lokare",
+    "title": "Second year",
+    "githubLink": "https://github.com/varunLokare",
+    "linkendinLink": "https://www.linkedin.com/in/varun-nagnath-lokare-a83338423/",
+    "imgPath": "/amfoss/member-directory/assets/second-years/varunLokare.jpeg"
+  },
+  {
     "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
   }
 ]
