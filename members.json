@@ -328,6 +328,14 @@
     "imgPath": "/amfoss/member-directory/assets/second-years/Aadith_Anil.jpg"
   },
   {
+  "name": "Devang Dileep",
+  "title": "Second year",
+  "githubLink": "https://github.com/devangdileep/",
+  "linkedinLink": "https://www.linkedin.com/in/devang-dileep-745118363/",
+  "twitterLink": "https://x.com/devang_dileep",
+  "imgPath": "/amfoss/member-directory/assets/second-years/Devang_Dileep.jpg"
+  },
+  {
     "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
   }
 ]
