@@ -328,6 +328,13 @@
     "imgPath": "/amfoss/member-directory/assets/second-years/Aadith_Anil.jpg"
   },
   {
+  "name": "Karempudi Laasya",
+  "title": "Second year",
+  "githubLink": "https://github.com/KarempudiLaasya",
+  "linkendinLink": "https://www.linkedin.com/in/laasya-karempudi-705903399/"
+  "imgPath": "/amfoss/member-directory/assets/second-years/laasya.jpeg"
+ },
+  {
     "ADD_ABOVE_HERE_TO_AVOID_MERGE_CONFLICTS": ""
   }
 ]
